@@ -4,6 +4,3 @@
 <p align="center">
   <img src="./metrics.plugin.isocalendar.fullyear.svg" width="600" alt="Full Year GitHub Calendar">
 </p>
-<p align="center">
-  <img src="./metrics.svg" width="600" alt="GitHub Metrics">
-</p>
