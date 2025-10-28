@@ -1,7 +1,7 @@
 name: Metrics
 on:
-  schedule: [{cron: "0 0 * * *"}]  # Runs daily
-  workflow_dispatch:               # Allows manual run
+  schedule: [{cron: "0 0 * * *"}]
+  workflow_dispatch:
   push: {branches: ["main", "master"]}
 
 jobs:
@@ -14,12 +14,14 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Output filename
-          filename: metrics.plugin.isocalendar.fullyear.svg
-
-          # Disable base sections (optional)
+          # Full-year contribution calendar
+          filename: metrics.svg
           base: ""
-
-          # Enable full-year calendar plugin
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+
+          # Achievements Plugin (Compact View)
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: X   # Show all achievements including locked ones
+          plugin_achievements_limit: 0       # 0 = show all
